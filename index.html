@@ -1,509 +1,289 @@
- <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ISHIMWE Christian — Systems &amp; Security-Minded Developer</title>
-<meta name="description" content="Portfolio of ISHIMWE Christian — Java/Spring Boot developer building self-hosted infrastructure, network security labs, and local AI tooling.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #0B0714;
-    --bg-2: #150B2E;
-    --surface: rgba(255,255,255,0.045);
-    --surface-strong: rgba(255,255,255,0.08);
-    --line: rgba(255,255,255,0.10);
-    --line-soft: rgba(255,255,255,0.06);
-    --text: #F5F2FF;
-    --text-dim: #B9ACDE;
-    --text-faint: #7C6DA3;
-    --violet: #8B5CF6;
-    --violet-2: #A78BFA;
-    --magenta: #D946EF;
-    --grad: linear-gradient(135deg, var(--violet) 0%, var(--magenta) 100%);
-    --radius: 18px;
-    --radius-sm: 12px;
-    --maxw: 980px;
-  }
-
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', -apple-system, sans-serif;
-    font-size: 16px;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    * { animation: none !important; transition: none !important; }
-    .hero-arrow path { stroke-dashoffset: 0 !important; }
-  }
-
-  a { color: var(--violet-2); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--violet-2); outline-offset: 3px; }
-
-  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; position: relative; }
-
-  h1, h2, h3 {
-    font-family: 'Baloo 2', 'Inter', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    margin: 0;
-  }
-
-  .field-label {
-    font-size: 12px;
-    color: var(--text-faint);
-    letter-spacing: 0.03em;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-
-  .icon { width: 22px; height: 22px; flex-shrink: 0; stroke: #fff; fill: none; stroke-width: 1.8; }
-
-  /* ---------- Ambient background glow ---------- */
-  .glow-field {
-    position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none;
-    background: var(--bg);
-  }
-  .glow-field::before, .glow-field::after {
-    content: ''; position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.55;
-  }
-  .glow-field::before {
-    width: 620px; height: 620px; top: -220px; right: -160px;
-    background: radial-gradient(circle, var(--violet) 0%, transparent 70%);
-  }
-  .glow-field::after {
-    width: 560px; height: 560px; top: 260px; left: -220px;
-    background: radial-gradient(circle, var(--magenta) 0%, transparent 70%);
-    opacity: 0.35;
-  }
-
-  /* ---------- Nav ---------- */
-  nav { position: sticky; top: 16px; z-index: 20; padding: 0 20px; }
-  nav .wrap {
-    display: flex; align-items: center; justify-content: space-between;
-    height: 60px; padding: 0 10px 0 22px; max-width: 900px;
-    background: rgba(21, 11, 46, 0.65);
-    backdrop-filter: blur(14px);
-    border: 1px solid var(--line);
-    border-radius: 999px;
-  }
-  .nav-mark { font-family: 'Baloo 2', sans-serif; font-size: 19px; color: var(--text); font-weight: 700; }
-  .nav-links { display: flex; gap: 2px; font-size: 14.5px; align-items: center; }
-  .nav-links a {
-    color: var(--text-dim); padding: 8px 14px; border-radius: 999px;
-    font-weight: 500; transition: color 0.15s ease, background 0.15s ease;
-  }
-  .nav-links a:hover { color: var(--text); text-decoration: none; background: var(--surface); }
-  .nav-links a.active { color: var(--text); background: var(--surface-strong); }
-  .nav-toggle {
-    display: none; background: none; border: 1px solid var(--line); border-radius: 999px;
-    width: 40px; height: 40px; color: var(--text); cursor: pointer; align-items: center; justify-content: center;
-  }
-  @media (max-width: 640px) {
-    nav .wrap { border-radius: 22px; }
-    .nav-links {
-      display: none; position: absolute; top: 68px; left: 0; right: 0;
-      background: rgba(21, 11, 46, 0.95); border: 1px solid var(--line); border-radius: 18px;
-      flex-direction: column; align-items: stretch; padding: 10px; gap: 2px;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISHIMWE Christian — Strategy, Luxury Automotive & AI Research</title>
+  <link rel="preconnect" href="https://googleapis.com" />
+  <link rel="preconnect" href="https://gstatic.com" crossorigin />
+  <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f5f5f3; --surface: #ffffff; --border: #18181b; --grid-line: #d4d4d8;
+      --text: #09090b; --muted: #52525b; --accent: #dc2626; --accent-ink: #ffffff;
+      --mono: "JetBrains Mono", monospace; --display: "Space Grotesk", sans-serif; --sans: "Inter", sans-serif;
     }
-    .nav-links.open { display: flex; }
-    .nav-links a { padding: 12px 14px; border-radius: 12px; }
-    .nav-toggle { display: flex; }
-  }
-
-  /* ---------- Hero ---------- */
-  header.hero { position: relative; padding: 100px 0 84px; }
-  .hero-kicker-row { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
-  .pill {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
-    padding: 7px 16px; font-size: 13.5px; color: var(--text-dim); font-weight: 500;
-  }
-  .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--grad); }
-  .hero-arrow { width: 60px; height: 46px; opacity: 0.8; }
-  .hero-arrow path { fill: none; stroke: var(--text-dim); stroke-width: 2; stroke-linecap: round; }
-
-  h1.hero-title {
-    font-size: clamp(38px, 6vw, 62px); line-height: 1.08; max-width: 14ch; color: var(--text);
-  }
-  h1.hero-title .accent {
-    background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
-  .hero-lede { max-width: 50ch; color: var(--text-dim); font-size: 17.5px; margin-top: 24px; }
-  .hero-actions { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; border-radius: 999px;
-    font-size: 15px; font-weight: 600; border: 1px solid var(--line);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-  }
-  .btn:hover { text-decoration: none; transform: translateY(-2px); }
-  .btn-primary { background: var(--grad); color: #fff; border: none; box-shadow: 0 8px 24px -8px rgba(139,92,246,0.6); }
-  .btn-primary:hover { box-shadow: 0 12px 30px -8px rgba(139,92,246,0.8); }
-  .btn-ghost { color: var(--text); background: var(--surface); }
-  .btn-ghost:hover { background: var(--surface-strong); }
-
-  /* ---------- Section shell ---------- */
-  section { padding: 76px 0; scroll-margin-top: 90px; }
-  .section-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 40px; gap: 20px; flex-wrap: wrap; }
-  .section-head h2 { font-size: 30px; color: var(--text); }
-  .section-note { color: var(--text-faint); font-size: 14px; max-width: 34ch; }
-
-  /* ---------- About ---------- */
-  .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; }
-  .about-card, .fact-card {
-    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 30px 32px;
-  }
-  .about-card p { color: var(--text-dim); margin: 0 0 16px; max-width: 58ch; }
-  .about-card p:last-child { margin-bottom: 0; }
-  .fact-card dt { font-size: 12px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 18px; font-weight: 600; }
-  .fact-card dt:first-child { margin-top: 0; }
-  .fact-card dd { margin: 4px 0 0; color: var(--text); font-size: 15px; }
-  @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } }
-
-  /* ---------- Projects ---------- */
-  .project {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    margin-bottom: 18px;
-    overflow: hidden;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  }
-  .project.open, .project:hover { border-color: rgba(167,139,250,0.5); box-shadow: 0 10px 30px -14px rgba(139,92,246,0.45); }
-  .project-head {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    padding: 24px 28px; gap: 20px; cursor: pointer;
-  }
-  .project-head-main { display: flex; gap: 16px; align-items: flex-start; }
-  .project-icon-wrap {
-    width: 44px; height: 44px; border-radius: 14px; flex-shrink: 0; margin-top: 2px;
-    background: var(--grad);
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 6px 18px -6px rgba(139,92,246,0.6);
-  }
-  .project-title { font-size: 20px; color: var(--text); margin: 0; }
-  .project-summary { color: var(--text-dim); font-size: 14.5px; margin-top: 6px; max-width: 54ch; }
-  .project-toggle {
-    color: var(--text-dim); font-size: 15px; font-weight: 600;
-    border: 1px solid var(--line); border-radius: 50%; width: 30px; height: 30px;
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-  }
-  .project.open .project-toggle { transform: rotate(45deg); background: var(--grad); border-color: transparent; }
-  .project-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-  .project.open .project-body { max-height: 900px; border-top: 1px solid var(--line-soft); }
-  .project-body-inner { padding: 24px 28px 30px; }
-  .spec-row { display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line-soft); }
-  .spec-row:first-child { border-top: none; }
-  .spec-row dt { font-size: 11.5px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.03em; padding-top: 2px; font-weight: 600; }
-  .spec-row dd { margin: 0; color: var(--text-dim); font-size: 14.5px; }
-  .spec-row dd strong { color: var(--text); font-weight: 600; }
-  .stack-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .stack-tags span {
-    font-size: 12px; color: var(--violet-2); font-weight: 600;
-    background: rgba(139,92,246,0.14); border: 1px solid rgba(139,92,246,0.3);
-    padding: 5px 12px; border-radius: 999px;
-  }
-  .project-links a { font-size: 14px; font-weight: 600; }
-
-  /* ---------- Skills ---------- */
-  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .skill-group {
-    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm);
-    padding: 20px 22px;
-  }
-  .skill-group h3 { font-size: 15px; color: var(--text); font-weight: 700; margin-bottom: 12px; font-family: 'Baloo 2', sans-serif; }
-  .skill-group .tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
-  .skill-group .tag-row span {
-    font-size: 13px; color: var(--text-dim); background: rgba(255,255,255,0.05);
-    border: 1px solid var(--line); padding: 5px 12px; border-radius: 999px;
-  }
-  @media (max-width: 720px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 480px) { .skills-grid { grid-template-columns: 1fr; } }
-
-  /* ---------- Contact ---------- */
-  .contact-panel {
-    background: linear-gradient(135deg, rgba(139,92,246,0.16), rgba(217,70,239,0.10));
-    border: 1px solid rgba(167,139,250,0.35); border-radius: var(--radius);
-    padding: 40px 36px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center;
-  }
-  .contact-panel h2 { font-size: 28px; margin-bottom: 10px; }
-  .contact-panel p { color: var(--text-dim); margin: 0; max-width: 42ch; }
-  .contact-links { display: flex; flex-direction: column; gap: 10px; }
-  .contact-links a {
-    display: flex; align-items: center; justify-content: space-between;
-    color: var(--text); border: 1px solid var(--line); border-radius: 14px;
-    padding: 13px 18px; font-size: 14.5px; font-weight: 500; background: rgba(255,255,255,0.03);
-    transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
-  }
-  .contact-links a:hover { border-color: var(--violet-2); text-decoration: none; background: rgba(139,92,246,0.12); transform: translateX(2px); }
-  .contact-links .field-label { color: var(--text-faint); }
-  @media (max-width: 720px) { .contact-panel { grid-template-columns: 1fr; } }
-
-  footer { padding: 36px 0 56px; color: var(--text-faint); font-size: 13px; text-align: center; }
-</style>
+    [data-theme="dark"] {
+      --bg: #09090b; --surface: #111114; --border: #e4e4e7; --grid-line: #27272a;
+      --text: #fafafa; --muted: #a1a1aa; --accent: #ef4444; --accent-ink: #09090b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 1180px; margin: 0 auto; border-left: 1px solid var(--grid-line); border-right: 1px solid var(--grid-line); }
+    header { position: sticky; top: 0; z-index: 40; background: var(--bg); border-bottom: 1px solid var(--grid-line); }
+    .nav { display: flex; justify-content: space-between; align-items: center; height: 60px; padding: 0 24px; }
+    .brand { font-family: var(--mono); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .sq { width: 10px; height: 10px; background: var(--accent); display: inline-block; }
+    .nav-r { display: flex; align-items: center; gap: 20px; font-family: var(--mono); font-size: 0.78rem; }
+    .nav-r a { color: var(--muted); text-decoration: none; text-transform: uppercase; }
+    .nav-r a:hover { color: var(--text); }
+    .btn-sm { background: transparent; border: 1px solid var(--grid-line); color: var(--text); font-family: var(--mono); font-size: 0.75rem; padding: 6px 12px; cursor: pointer; text-transform: uppercase; }
+    .btn-sm:hover { border-color: var(--text); }
+    .hero { padding: 64px 24px 48px; border-bottom: 1px solid var(--grid-line); }
+    .kicker { font-family: var(--mono); font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 16px; display: block; }
+    h1 { font-family: var(--display); font-size: 2.9rem; font-weight: 700; line-height: 1.08; letter-spacing: -0.03em; max-width: 840px; margin-bottom: 18px; }
+    .lead { font-size: 1.05rem; color: var(--muted); max-width: 720px; margin-bottom: 28px; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 44px; }
+    .btn-solid { background: var(--text); color: var(--bg); font-family: var(--mono); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; padding: 12px 20px; text-decoration: none; border: 1px solid var(--text); cursor: pointer; }
+    .btn-solid:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn-line { background: var(--surface); color: var(--text); font-family: var(--mono); font-size: 0.8rem; text-transform: uppercase; padding: 12px 20px; text-decoration: none; border: 1px solid var(--grid-line); }
+    .btn-line:hover { border-color: var(--text); }
+    .kpi-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); border-top: 1px solid var(--grid-line); border-left: 1px solid var(--grid-line); }
+    .kpi { padding: 18px 20px; border-right: 1px solid var(--grid-line); border-bottom: 1px solid var(--grid-line); background: var(--surface); }
+    .kpi strong { display: block; font-family: var(--display); font-size: 1.65rem; letter-spacing: -0.02em; }
+    .kpi span { font-family: var(--mono); font-size: 0.74rem; color: var(--muted); text-transform: uppercase; }
+    .sec { padding: 52px 24px; border-bottom: 1px solid var(--grid-line); }
+    .sec-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 28px; }
+    h2 { font-family: var(--display); font-size: 1.95rem; letter-spacing: -0.025em; }
+    .sec-note { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); }
+    .toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-bottom: 24px; }
+    .tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tab { background: var(--surface); border: 1px solid var(--grid-line); color: var(--muted); font-family: var(--mono); font-size: 0.76rem; padding: 8px 14px; cursor: pointer; text-transform: uppercase; }
+    .tab.active { background: var(--text); color: var(--bg); border-color: var(--text); font-weight: 600; }
+    .search { background: var(--surface); border: 1px solid var(--grid-line); color: var(--text); font-family: var(--mono); font-size: 0.8rem; padding: 8px 14px; min-width: 260px; outline: none; }
+    .search:focus { border-color: var(--text); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); border-top: 1px solid var(--grid-line); border-left: 1px solid var(--grid-line); }
+    .card { background: var(--surface); border-right: 1px solid var(--grid-line); border-bottom: 1px solid var(--grid-line); padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
+    .card:hover { background: var(--bg); }
+    .c-meta { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .c-tag { color: var(--accent); font-weight: 600; }
+    .card h3 { font-family: var(--display); font-size: 1.22rem; line-height: 1.28; letter-spacing: -0.015em; margin-bottom: 10px; }
+    .card p { font-size: 0.9rem; color: var(--muted); margin-bottom: 14px; }
+    .metric-box { font-family: var(--mono); font-size: 0.76rem; background: var(--bg); border: 1px solid var(--grid-line); padding: 10px 12px; margin-bottom: 18px; }
+    .c-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .c-btn { font-family: var(--mono); font-size: 0.75rem; text-transform: uppercase; font-weight: 600; padding: 9px; text-align: center; cursor: pointer; text-decoration: none; border: 1px solid var(--text); }
+    .c-read { background: var(--text); color: var(--bg); }
+    .c-read:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .c-dl { background: transparent; color: var(--text); border-color: var(--grid-line); }
+    .c-dl:hover { border-color: var(--text); }
+    .matrix { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); border-top: 1px solid var(--grid-line); border-left: 1px solid var(--grid-line); }
+    .cell { background: var(--surface); border-right: 1px solid var(--grid-line); border-bottom: 1px solid var(--grid-line); padding: 24px; }
+    .cell h3 { font-family: var(--display); font-size: 1.15rem; margin-bottom: 12px; }
+    .cell ul { list-style: none; font-size: 0.88rem; color: var(--muted); }
+    .cell li { padding: 6px 0; border-bottom: 1px dashed var(--grid-line); }
+    .cell li:last-child { border-bottom: none; }
+    footer { padding: 36px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-family: var(--mono); font-size: 0.78rem; color: var(--muted); }
+    .f-links { display: flex; gap: 20px; }
+    .f-links a { color: var(--text); text-decoration: none; text-transform: uppercase; }
+    .f-links a:hover { color: var(--accent); }
+    .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 100; display: none; align-items: center; justify-content: center; padding: 16px; }
+    .modal.open { display: flex; }
+    .modal-box { background: var(--surface); border: 1px solid var(--text); width: 100%; max-width: 980px; height: 88vh; display: flex; flex-direction: column; }
+    .modal-top { display: flex; justify-content: space-between; align-items: center; padding: 12px 18px; border-bottom: 1px solid var(--grid-line); gap: 12px; }
+    .modal-top strong { font-family: var(--display); font-size: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    iframe { width: 100%; flex: 1; border: none; background: #18181b; }
+    @media (max-width: 640px) { h1 { font-size: 2rem; } .hide-sm { display: none; } .search { width: 100%; } }
+  </style>
 </head>
 <body>
-
-<div class="glow-field"></div>
-
-<nav>
   <div class="wrap">
-    <div class="nav-mark">ISHIMWE Christian</div>
-    <div class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="1" y1="4" x2="17" y2="4"/><line x1="1" y1="9" x2="17" y2="9"/><line x1="1" y1="14" x2="17" y2="14"/></svg>
-    </button>
+    <header>
+      <div class="nav">
+        <a href="#" class="brand"><span class="sq"></span>ISHIMWE Christian // INDEX</a>
+        <div class="nav-r">
+          <a href="#work" class="hide-sm">01. Research</a>
+          <a href="#scope" class="hide-sm">02. Scope</a>
+          <a href="#contact" class="hide-sm">03. Contact</a>
+          <button class="btn-sm" id="themeBtn">Dark Mode</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <span class="kicker">[00] Strategy &bull; Ultra-Luxury Automotive &bull; AI Systems Evaluation</span>
+      <h1>Independent Strategy Research &amp; Analytical Advisory</h1>
+      <p class="lead">Technology strategist and sector analyst examining luxury automotive unit economics, scarcity governance, electrification pacing, and AI output evaluation—combining C-suite commercial rigor with technical systems precision.</p>
+      <div class="cta-row">
+        <a href="#work" class="btn-solid">Browse 07 Publications &rarr;</a>
+        <a href="(8) ISHIMWE Christian | LinkedIn" target="_blank" rel="noopener" class="btn-line">LinkedIn</a>
+        <a href="mailto:ishimwexanc@gmail.com" class="btn-line">Email</a>
+      </div>
+      <div class="kpi-bar">
+        <div class="kpi"><strong>05 BRIEFS</strong><span>Luxury Auto C-Suite Strategy</span></div>
+        <div class="kpi"><strong>66 PAGES</strong><span>AI &amp; Market Intelligence Reports</span></div>
+        <div class="kpi"><strong>08+ OEMS</strong><span>Ferrari, Porsche, Rolls-Royce, Bentley</span></div>
+        <div class="kpi"><strong>DUAL LENS</strong><span>Commercial Logic + AI Auditing</span></div>
+      </div>
+    </section>
+
+    <section class="sec" id="work">
+      <div class="sec-head">
+        <h2>01. Research &amp; Strategy Archive</h2>
+        <span class="sec-note">SELECT [READ] FOR INLINE PDF PREVIEW OR [PDF] TO DOWNLOAD</span>
+      </div>
+      <div class="toolbar">
+        <div class="tabs">
+          <button class="tab active" data-filter="all">All [07]</button>
+          <button class="tab" data-filter="auto">Luxury Auto [05]</button>
+          <button class="tab" data-filter="ai">AI &amp; Intelligence [02]</button>
+        </div>
+        <input type="search" id="searchInput" class="search" placeholder="FILTER BY OEM, METRIC, OR TOPIC..." />
+      </div>
+      <div class="grid" id="cardsGrid"></div>
+    </section>
+
+    <section class="sec" id="scope">
+      <div class="sec-head">
+        <h2>02. Advisory &amp; Technical Matrix</h2>
+        <span class="sec-note">CORE EVALUATION &amp; SYSTEMS CAPABILITIES</span>
+      </div>
+      <div class="matrix">
+        <div class="cell">
+          <h3>[A] Luxury Automotive Strategy</h3>
+          <ul>
+            <li>Production volume caps &amp; allocation discipline</li>
+            <li>Bespoke personalization &amp; coachbuilding margins</li>
+            <li>PHEV vs. BEV pacing &amp; residual value defense</li>
+            <li>Regional rebalancing (EMEA, Americas, China)</li>
+            <li>Cross-luxury benchmarks (Haute Horlogerie)</li>
+          </ul>
+        </div>
+        <div class="cell">
+          <h3>[B] AI Output &amp; Memo Auditing</h3>
+          <ul>
+            <li>C-suite stress-testing of AI strategy drafts</li>
+            <li>Detecting logical gaps, hallucinations &amp; red flags</li>
+            <li>Correcting volume-auto bias in luxury models</li>
+            <li>Structured executive rubrics &amp; written critique</li>
+            <li>Technical AI validation &amp; documentation</li>
+          </ul>
+        </div>
+        <div class="cell">
+          <h3>[C] Systems &amp; Quantitative Rigor</h3>
+          <ul>
+            <li>Enterprise IT architecture &amp; data integrity</li>
+            <li>Financial &amp; unit-economics benchmarking</li>
+            <li>Translating technical trade-offs into board briefs</li>
+            <li>Datawrapper executive chart engineering</li>
+            <li>Primary investor filing verification</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <span>&copy; 2026 ISHIMWE Christian // PORTFOLIO</span>
+      <div class="f-links">
+        <a href="mailto:ishimwexanc@gmail.com">ishimwexanc@gmail.com</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </footer>
   </div>
-</nav>
 
-<header class="hero">
-  <div class="wrap">
-    <div class="hero-kicker-row">
-      <span class="pill"><span class="dot"></span>Systems &amp; security-minded developer</span>
-      <svg class="hero-arrow" viewBox="0 0 60 46" aria-hidden="true">
-        <path d="M4 6 C 20 6, 36 10, 50 32 M 50 32 L 40 30 M 50 32 L 46 20" pathLength="1"/>
-      </svg>
-    </div>
-    <h1 class="hero-title">I build infrastructure I'd trust to run <span class="accent">without me watching it.</span></h1>
-    <p class="hero-lede">Java/Spring Boot developer who reaches for VMs, firewalls, and packet captures as often as an IDE — because the systems around the code are where most real failures happen.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary">See the work</a>
-      <a href="https://www.linkedin.com/feed/" class="btn btn-ghost">Connect on LinkedIn</a>
-    </div>
-  </div>
-</header>
-
-<section id="about">
-  <div class="wrap">
-    <div class="section-head"><h2>About</h2></div>
-    <div class="about-grid">
-      <div class="about-card">
-        <p>I'm a university student building production-grade systems independently, end to end, before handing them off to a team. My primary stack is Java with Spring Boot, backed by PostgreSQL — but a good share of my time goes into the layer underneath the application: firewalls, intrusion detection, load balancers, and self-hosted storage.</p>
-        <p>I prefer local and privacy-preserving tools over convenient cloud defaults, and I'd rather understand why something failed than have it quietly work. That shows up across the projects below — each one includes a failure I hit and had to actually diagnose, not just a clean success story.</p>
-      </div>
-      <dl class="fact-card">
-        <dt>Focus</dt><dd>Backend systems, network security, self-hosted infrastructure</dd>
-        <dt>Primary stack</dt><dd>Java, Spring Boot, PostgreSQL</dd>
-        <dt>Also working in</dt><dd>Python, JavaScript, local AI tooling</dd>
-        <dt>Based in</dt><dd>KIGALI-GASABO</dd>
-      </dl>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Projects</h2>
-      <div class="section-note">Four labs — tap one to open the breakdown, stack, and the specific problem I had to debug.</div>
-    </div>
-
-    <div class="project">
-      <div class="project-head" data-toggle>
-        <div class="project-head-main">
-          <div class="project-icon-wrap">
-            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><line x1="7" y1="7" x2="7" y2="7"/><line x1="7" y1="17" x2="7" y2="17"/></svg>
-          </div>
-          <div>
-            <h3 class="project-title">Hardened Multi-VM Web Infrastructure Lab</h3>
-            <div class="project-summary">Three-VM environment with a WAF-protected site, a load-balanced service tier, and hardened SSH — built for a Wireless Networks course, run like production.</div>
-          </div>
-        </div>
-        <div class="project-toggle">+</div>
-      </div>
-      <div class="project-body">
-        <div class="project-body-inner">
-          <div class="spec-row"><dt>Setup</dt><dd>Three VirtualBox VMs (two Ubuntu, one CentOS) hosting two secured sites — a static Apache2 site and an Nginx + PHP + MariaDB portfolio — behind a Traefik v2.11 load balancer using the file provider.</dd></div>
-          <div class="spec-row"><dt>Security layer</dt><dd>ModSecurity WAF running the OWASP Core Rule Set in front of both sites, UFW as host firewall, and SSH access locked down with Google Authenticator 2FA rather than password auth alone.</dd></div>
-          <div class="spec-row"><dt>Containerization</dt><dd>Services split into Docker containers, orchestrated behind Traefik so the load balancer could route to either site without hardcoding upstream IPs.</dd></div>
-          <div class="spec-row"><dt>Deliverables</dt><dd>Full academic report, a recorded video walkthrough with transcript, and a prepared Q&amp;A set for defending the design decisions.</dd></div>
-          <div class="spec-row"><dt>Stack</dt><dd class="stack-tags"><span>Ubuntu</span><span>CentOS</span><span>Docker</span><span>Traefik</span><span>ModSecurity</span><span>OWASP CRS</span><span>UFW</span><span>Nginx</span><span>Apache2</span><span>MariaDB</span></dd></div>
-          <!--<div class="project-links"><a href="[LINK TO REPORT / REPO]">View write-up →</a></div>-->
+  <div class="modal" id="pdfModal">
+    <div class="modal-box">
+      <div class="modal-top">
+        <strong id="modalTitle">DOCUMENT PREVIEW</strong>
+        <div style="display:flex;gap:8px;">
+          <a id="modalDl" href="#" download class="btn-solid" style="padding:6px 12px;font-size:0.74rem;">Download PDF</a>
+          <button class="btn-sm" id="modalClose">Close [ESC]</button>
         </div>
       </div>
-    </div>
-
-    <div class="project">
-      <div class="project-head" data-toggle>
-        <div class="project-head-main">
-          <div class="project-icon-wrap">
-            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/></svg>
-          </div>
-          <div>
-            <h3 class="project-title">NAS Deployment with Live Intrusion Detection</h3>
-            <div class="project-summary">TrueNAS storage pool paired with a Suricata IDS that caught an attacking machine before it even finished joining the network.</div>
-          </div>
-        </div>
-        <div class="project-toggle">+</div>
-      </div>
-      <div class="project-body">
-        <div class="project-body-inner">
-          <div class="spec-row"><dt>Storage</dt><dd>TrueNAS SCALE with a mirrored ZFS pool across two disks and an SMB share tested for read/write access from a Windows host.</dd></div>
-          <div class="spec-row"><dt>Monitoring</dt><dd>Suricata running in IDS mode on a dedicated Ubuntu Server VM, listening in promiscuous mode against the Emerging Threats ruleset (65,000+ rules).</dd></div>
-          <div class="spec-row"><dt>The debugging story</dt><dd><strong>Networking:</strong> Bridged Adapter mode over WiFi silently failed to put the VMs on a shared subnet — fixed by building a dedicated NAT Network with DHCP and a fixed subnet instead. <strong>Detection:</strong> Suricata was configured to listen on the wrong interface and missed every scan until the af-packet config was corrected.</dd></div>
-          <div class="spec-row"><dt>Result</dt><dd>Live nmap scans from a Kali VM were flagged in real time — and, notably, Suricata caught the attacking machine from its DHCP hostname alone, before any scan was even run.</dd></div>
-          <div class="spec-row"><dt>Stack</dt><dd class="stack-tags"><span>TrueNAS SCALE</span><span>ZFS</span><span>Suricata</span><span>SMB</span><span>Kali Linux</span><span>VirtualBox</span></dd></div>
-        <!--<div class="project-links"><a href="[LINK TO REPORT / REPO]">View write-up →</a></div> -->
-        </div>
-      </div>
-    </div>
-
-    <div class="project">
-      <div class="project-head" data-toggle>
-        <div class="project-head-main">
-          <div class="project-icon-wrap">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg>
-          </div>
-          <div>
-            <h3 class="project-title">pfSense / OPNsense Firewall Lab</h3>
-            <div class="project-summary">Ongoing hands-on firewall configuration work — interface assignment, IP planning, and routing in a virtualized network.</div>
-          </div>
-        </div>
-        <div class="project-toggle">+</div>
-      </div>
-      <div class="project-body">
-        <div class="project-body-inner">
-          <div class="spec-row"><dt>Setup</dt><dd>pfSense/OPNsense deployed inside a VirtualBox lab as part of continued, self-directed networking exploration alongside coursework.</dd></div>
-          <div class="spec-row"><dt>Focus</dt><dd>Interface assignment and IP configuration — the foundational routing and segmentation work that the other labs (NAS, IDS) build on top of.</dd></div>
-          <div class="spec-row"><dt>Stack</dt><dd class="stack-tags"><span>pfSense</span><span>OPNsense</span><span>VirtualBox</span></dd></div>
-          <!--div class="project-links"><a href="[LINK, IF YOU HAVE ONE]">View write-up →</a></div>-->
-        </div>
-      </div>
-    </div>
-
-    <div class="project">
-      <div class="project-head" data-toggle>
-        <div class="project-head-main">
-          <div class="project-icon-wrap">
-            <svg class="icon" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.5"/><line x1="12" y1="1" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="23"/><line x1="1" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="23" y2="12"/></svg>
-          </div>
-          <div>
-            <h3 class="project-title">Fully Local AI-Assisted Dev Environment</h3>
-            <div class="project-summary">A three-model local AI setup for coding assistance — no cloud API, no telemetry, running on a laptop with no dedicated GPU.</div>
-          </div>
-        </div>
-        <div class="project-toggle">+</div>
-      </div>
-      <div class="project-body">
-        <div class="project-body-inner">
-          <div class="spec-row"><dt>Hardware</dt><dd>HP EliteBook 840 G5 — Intel i7 8th-gen, 16GB RAM, no GPU. All AI tooling isolated to a separate drive for OS-reinstall resilience.</dd></div>
-          <div class="spec-row"><dt>Architecture</dt><dd>Three models split by role rather than one model doing everything: <strong>mistral:7b</strong> for planning, <strong>qwen2.5-coder:7b</strong> for generation, and a smaller <strong>qwen2.5-coder:1.5b-base</strong> for fast inline autocomplete — run through Ollama, with AnythingLLM as the RAG/chat interface and Continue wired into the IDE.</dd></div>
-          <div class="spec-row"><dt>The debugging story</dt><dd>Lost every downloaded model to a misconfigured storage redirection before the environment variable was correctly scoped with a machine-level <code>setx /M</code> flag — a config detail that's easy to get wrong and expensive to get wrong twice.</dd></div>
-          <div class="spec-row"><dt>Deliverables</dt><dd>Two standing reference documents — a Developer Standards guide and a Project Template Checklist — written so the environment survives a reinstall without re-deriving every decision from scratch.</dd></div>
-          <div class="spec-row"><dt>Stack</dt><dd class="stack-tags"><span>Ollama</span><span>AnythingLLM</span><span>Continue</span><span>Python</span><span>IntelliJ IDEA</span><span>VS Code</span></dd></div>
-          <!--<div class="project-links"><a href="[LINK, IF YOU HAVE ONE]">View write-up →</a></div>-->
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="skills">
-  <div class="wrap">
-    <div class="section-head"><h2>Skills</h2></div>
-    <div class="skills-grid">
-      <div class="skill-group"><h3>Languages</h3><div class="tag-row"><span>Java</span><span>Python</span><span>JavaScript</span></div></div>
-      <div class="skill-group"><h3>Frameworks &amp; Tools</h3><div class="tag-row"><span>Spring Boot</span><span>Maven</span><span>JPA</span><span>Spring Security</span></div></div>
-      <div class="skill-group"><h3>Infrastructure</h3><div class="tag-row"><span>Docker</span><span>Traefik</span><span>Nginx</span><span>Apache2</span><span>VirtualBox</span></div></div>
-      <div class="skill-group"><h3>Security &amp; Networking</h3><div class="tag-row"><span>Suricata IDS</span><span>ModSecurity WAF</span><span>pfSense</span><span>OPNsense</span><span>UFW</span><span>SSH 2FA</span></div></div>
-      <div class="skill-group"><h3>Databases</h3><div class="tag-row"><span>PostgreSQL</span><span>MariaDB</span></div></div>
-      <div class="skill-group"><h3>AI Tooling</h3><div class="tag-row"><span>Ollama</span><span>AnythingLLM</span><span>Continue</span></div></div>
+      <iframe id="pdfFrame" title="PDF Viewer"></iframe>
     </div>
   </div>
-</section>
 
-<section id="contact">
-  <div class="wrap">
-    <div class="contact-panel">
-      <div>
-        <h2>Let's talk</h2>
-        <p>Open to internships, collaboration, and conversations about systems, security, or self-hosted infrastructure.</p>
-      </div>
-      <div class="contact-links">
-        <a href="mailto:ishimwexanc@gmail.com"><span>ishimwexanc@gmail.com</span><span class="field-label">Email</span></a>
-        <a href="https://github.com/27248/IC_Portfolio"><span>GitHub</span><span class="field-label">Code</span></a>
-        <a href="www.linkedin.com/in/ishimwe-christian7"><span>LinkedIn</span><span class="field-label">Profile</span></a>
-      </div>
-    </div>
-  </div>
-</section>
+  <script>
+       const publications = [
+      { id: "01", category: "auto", tag: "LUXURY AUTO // 04 PP", title: "The Scarcity Dividend: Why Ferraris Sub-15,000 Volume Cap Outperforms Traditional Luxury Fashion Houses", summary: "Comparative unit-economics and operating margin benchmark contrasting Ferrari N.V. against Hermes, LVMH, Toyota, and Volkswagen Group.", insight: "BENCHMARK: Ferrari 29.5%-31.2% EBIT margin beats LVMH Group (22.0%) and rivals LVMH Fashion & Leather (35.0%).", file: "D:/DOQS/PRO/Portfolio/Papers/luxury-auto/Article 1 The Scarcity Dividend.pdf" },
+      { id: "02", category: "auto", tag: "LUXURY AUTO // 04 PP", title: "Bespoke Profit Engines: How Personalization Suites and Coachbuilding Deliver 30%+ Operating Margins", summary: "Financial breakdown of high-margin customization programs across Rolls-Royce Bespoke, Ferrari Tailor Made, Bentley Mulliner, and Porsche Sonderwunsch.", insight: "BENCHMARK: Personalization exceeds 20% of Ferrari car/parts revenue (~EUR 1.2B/yr) and lifts luxury ATP by 16%-35%+.", file: "D:/DOQS/PRO/Portfolio/Papers/luxury-auto/Article 2 Bespoke Profit Engines.pdf" },
+      { id: "03", category: "auto", tag: "LUXURY AUTO // 04 PP", title: "The Hybrid Bridge Advantage: Why Delaying Pure-Electric Flagships Protects Margins and Brand Equity", summary: "C-suite assessment of electrification pacing, residual value erosion on early luxury BEVs, and hybrid profitability across Lamborghini, Bentley, Porsche, and Ferrari.", insight: "BENCHMARK: Hybrid-first leaders hold 27.5%-29.5% margins; rushed EV rescheduling triggered EUR 1.8B in Porsche charges.", file: "D:/DOQS/PRO/Portfolio/Papers/luxury-auto/Article 3 The Hybrid Bridge Advantage.pdf" },
+      { id: "04", category: "auto", tag: "CROSS-LUXURY // 04 PP", title: "Mechanical Moats: What Ultra-Luxury Automakers Can Learn from Rolex, Patek Philippe, and Audemars Piguet", summary: "Transferable strategic lessons from Swiss haute horlogerie on surviving technological disruption, managing dealer allocations, and defending secondary-market floors.", insight: "BENCHMARK: Swiss mechanical leaders sustain 31%-34% margins and 112%-135% secondary-market retention alongside Ferrari.", file: "D:/DOQS/PRO/Portfolio/Papers/luxury-auto/Article 4 Mechanical Moats.pdf" },
+      { id: "05", category: "auto", tag: "LUXURY AUTO // 04 PP", title: "The China Volume Reset: Reallocating Production and Clienteling Budgets Amid Shifting Asian Luxury Demand", summary: "Regional shipment and allocation analysis examining Ferraris ~6% Greater China cap versus peer exposure across EMEA, Americas, and APAC.", insight: "BENCHMARK: Capping Greater China at ~6% insulated Ferrari while peers with 20%-25% exposure faced dealer resets.", file: "D:/DOQS/PRO/Portfolio/Papers/luxury-auto/Article 05 The China Volume Reset.pdf" },
+      { id: "06", category: "ai", tag: "INTELLIGENCE // 30 PP", title: "AI Market Intelligence Report (v3.0 Definitive Edition)", summary: "In-depth sector analysis, competitive landscape synthesis, and structured strategic evaluation methodology for enterprise decision-makers.", insight: "SCOPE: 30-page structured intelligence framework demonstrating multi-source synthesis and executive reporting.", file: "D:/DOQS/PRO/Portfolio/Papers/ai-intelligence/AI_Market_Intelligence_Report.pdf" },
+      { id: "07", category: "ai", tag: "AI SYSTEMS // 36 PP", title: "Engineering AI Reference Manual", summary: "Comprehensive technical manual covering AI reasoning workflows, structured output validation, failure-mode auditing, and quality assurance.", insight: "SCOPE: 36-page reference architecture proving deep capability in evaluating, benchmarking, and auditing AI systems.", file: "D:/DOQS/PRO/Portfolio/Papers/ai-intelligence/Engineering_AI_Reference_Manual.pdf" }
+    ];
 
-<footer>
-  <div class="wrap">© <span id="year"></span> ISHIMWE Christian. Built by hand, deployed as a static site.</div>
-</footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
 
-  var navToggle = document.getElementById('navToggle');
-  var navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', function() {
-    var open = navLinks.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', open);
-  });
-  navLinks.querySelectorAll('a').forEach(function(a) {
-    a.addEventListener('click', function() { navLinks.classList.remove('open'); });
-  });
+    const grid = document.getElementById("cardsGrid");
+    const tabs = document.querySelectorAll(".tab");
+    const search = document.getElementById("searchInput");
+    const modal = document.getElementById("pdfModal");
+    const frame = document.getElementById("pdfFrame");
+    let filter = "all";
+    let query = "";
 
-  document.querySelectorAll('[data-toggle]').forEach(function(head) {
-    head.addEventListener('click', function() {
-      var card = head.closest('.project');
-      var wasOpen = card.classList.contains('open');
-      document.querySelectorAll('.project.open').forEach(function(p) { p.classList.remove('open'); });
-      if (!wasOpen) card.classList.add('open');
-    });
-    head.setAttribute('role', 'button');
-    head.setAttribute('tabindex', '0');
-    head.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); head.click(); }
-    });
-  });
-  var first = document.querySelector('.project');
-  if (first) first.classList.add('open');
+    function render() {
+      const list = publications.filter(function(p) {
+        const matchCat = filter === "all" || p.category === filter;
+        const matchText = !query || (p.title + " " + p.summary + " " + p.insight).toLowerCase().includes(query.toLowerCase());
+        return matchCat && matchText;
+      });
 
-  // Hand-drawn arrow — single orchestrated draw-in on load
-  document.querySelectorAll('.hero-arrow path').forEach(function(path) {
-    path.style.strokeDasharray = '1';
-    path.style.strokeDashoffset = '1';
-    path.style.transition = 'stroke-dashoffset 1s ease 0.3s';
-    requestAnimationFrame(function() {
-      requestAnimationFrame(function() { path.style.strokeDashoffset = '0'; });
-    });
-  });
-
-  var sections = ['about', 'projects', 'skills', 'contact'].map(function(id) { return document.getElementById(id); });
-  var links = Array.from(navLinks.querySelectorAll('a'));
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        links.forEach(function(l) { l.classList.remove('active'); });
-        var match = links.find(function(l) { return l.getAttribute('href') === '#' + entry.target.id; });
-        if (match) match.classList.add('active');
+      if (!list.length) {
+        grid.innerHTML = '<div style="padding:32px;font-family:var(--mono);font-size:0.85rem;color:var(--muted);">NO MATCHING RECORDS FOUND.</div>';
+        return;
       }
-    });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-  sections.forEach(function(s) { if (s) observer.observe(s); });
-</script>
 
+      grid.innerHTML = list.map(function(p, idx) {
+        return '<article class="card">' +
+          '<div>' +
+            '<div class="c-meta"><span class="c-tag">[' + p.id + '] ' + p.tag + '</span><span>PDF</span></div>' +
+            '<h3>' + p.title + '</h3>' +
+            '<p>' + p.summary + '</p>' +
+            '<div class="metric-box">' + p.insight + '</div>' +
+          '</div>' +
+          '<div class="c-actions">' +
+            '<button class="c-btn c-read" data-idx="' + idx + '">Read Brief</button>' +
+            '<a class="c-btn c-dl" href="' + p.file + '" download>PDF &darr;</a>' +
+          '</div>' +
+        '</article>';
+      }).join("");
+
+      document.querySelectorAll(".c-read").forEach(function(btn) {
+        btn.addEventListener("click", function() {
+          const item = list[Number(btn.dataset.idx)];
+          document.getElementById("modalTitle").textContent = item.title;
+          frame.src = item.file;
+          document.getElementById("modalDl").href = item.file;
+          modal.classList.add("open");
+        });
+      });
+    }
+
+    tabs.forEach(function(t) {
+      t.addEventListener("click", function() {
+        tabs.forEach(function(b) { b.classList.remove("active"); });
+        t.classList.add("active");
+        filter = t.dataset.filter;
+        render();
+      });
+    });
+
+    search.addEventListener("input", function(e) {
+      query = e.target.value;
+      render();
+    });
+
+    function closePdf() {
+      modal.classList.remove("open");
+      frame.src = "";
+    }
+
+    document.getElementById("modalClose").addEventListener("click", closePdf);
+    modal.addEventListener("click", function(e) { if (e.target === modal) closePdf(); });
+    document.addEventListener("keydown", function(e) { if (e.key === "Escape") closePdf(); });
+
+    document.getElementById("themeBtn").addEventListener("click", function() {
+      const h = document.documentElement;
+      const isLight = h.getAttribute("data-theme") === "light";
+      h.setAttribute("data-theme", isLight ? "dark" : "light");
+      document.getElementById("themeBtn").textContent = isLight ? "Light Mode" : "Dark Mode";
+    });
+
+    render();
+  </script>
 </body>
 </html>
